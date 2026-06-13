@@ -1,0 +1,37 @@
+[
+  {
+    "id": "can_init",
+    "requirement": "实现 CAN 总线驱动，包含 Init 和 Transmit 函数，遵循 AUTOSAR 风格",
+    "expected_keywords": ["Can_Init", "Can_Transmit", "Status_t", "STATUS_OK"],
+    "forbidden_patterns": ["malloc", "printf"],
+    "category": "can"
+  },
+  {
+    "id": "adc_read",
+    "requirement": "实现 ADC 多通道采样模块，支持初始化和批量读取",
+    "expected_keywords": ["AdcSampler", "ReadAll", "STATUS_INVALID_PARAM"],
+    "forbidden_patterns": ["malloc", "free"],
+    "category": "adc"
+  },
+  {
+    "id": "gpio_ctrl",
+    "requirement": "实现 GPIO 引脚电平设置函数，带参数校验",
+    "expected_keywords": ["Gpio", "STATUS_INVALID_PARAM", "return"],
+    "forbidden_patterns": ["sprintf", "gets"],
+    "category": "gpio"
+  },
+  {
+    "id": "watchdog",
+    "requirement": "实现看门狗喂狗模块，主循环定期调用 Feed 函数",
+    "expected_keywords": ["Wdg", "Feed", "STATUS"],
+    "forbidden_patterns": ["malloc"],
+    "category": "safety"
+  },
+  {
+    "id": "uart_log",
+    "requirement": "实现 UART 日志输出宏，替代 printf，支持日志级别",
+    "expected_keywords": ["LOG_", "UART", "level"],
+    "forbidden_patterns": ["printf\\s*\\("],
+    "category": "logging"
+  }
+]
